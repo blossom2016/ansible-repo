@@ -28,6 +28,32 @@ Set the hostname:
 primary
 ```
 
+## Setting up SSH
+
+Next, I set up SSH on the host and copied the public key to the other VMs. I SSH'd into each VM from the control VM to ensure it worked. I generated SSH key pairs using this command:
+```bash
+ssh-keygen -t rsa -b 4096 -C "<EMAIL>"
+```
+In my case:
+
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+To avoid being prompted for the passphrase repeatedly, I loaded my SSH key into the SSH agent on my control machine:
+
+
+Start the SSH agent:
+```bash
+eval "$(ssh-agent -s)"
+```
+
+```bash
+Add the SSH key:
+```bash
+ssh-add ~/.ssh/id_ed25519
+```
+
 # Ansible-Repo 
 This an ansible Repo for my personal use. I used multiple vm's for my testing.
 I created an inventory.txt file to store my hostnames.
