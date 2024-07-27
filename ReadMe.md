@@ -1,6 +1,7 @@
 # Ansible-Repo
 
-This is an Ansible repository for my personal use. I used multiple VMs for my testing. I created an `inventory.txt` file to store my hostnames. I have some controller VMs and some VMs that I use for testing.
+This is an Ansible repository for my personal use. I used multipass VMs for my testing. I created an `inventory.txt` file to store my hostnames. I have some controller VMs and some VMs that I use for testing.
+If you follow these steps, you should be able to use Ansible to configure your VMs. To know how to setup multipass VMs, please refer to [this](https://multipass.run/install) document.
 
 ## Setting Hostnames
 
@@ -135,5 +136,51 @@ Install Ansible on the control machine using the following command:
 ```bash
 sudo apt install ansible
 ```
+
+
+## Step 13: Create Ansible Inventory File
+The Inventory file is among the files here. Modify using the Readme as a guide. 
+
+## Step 14: Create Ansible Playbook
+The ansible playbook is also included in this repository. Modify using the Readme as a guide.
+## Step 15: Run Ansible Playbook( to install nginx on target VMs)
+Run the playbook using the following command:
+
+```bash
+ansible-playbook -i inventory.txt install_nginx.yml
+
+```
+### Verifying the Playbook Execution
+To ensure that the tasks in the playbook were executed successfully on the target machines, you can verify the following:
+
+1. Check nginx Installation
+On the Target Machine:
+
+Run:
+```bash
+dpkg -l | grep nginx
+```
+
+Expected Output:
+```bash
+ii  nginx                             1.18.0-0ubuntu1                              amd64        small, powerful, scalable web/proxy server
+```
+# This confirms that the nginx package is installed.
+### OR
+2. Check nginx Service Status
+On the Target Machine:
+```bash
+sudo systemctl status nginx
+```
+# Expected Output:
+
+```bash
+Copy code
+● nginx.service - A high-performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sat 2024-07-27 12:00:00 UTC; 1min 30s ago
+ ...
+```
+# This confirms that the nginx service is running and enabled.
 
 
