@@ -1,0 +1,32 @@
+---
+- name: Manage Ubuntu Hosts
+  hosts: all
+  become: yes  # Use 'become' to execute tasks with elevated privileges
+  tasks:
+    - name: Update all packages to the latest version
+      apt:
+        update_cache: yes
+        upgrade: dist
+
+    - name: Install the curl package
+      apt:
+        name: curl
+        state: present
+
+    - name: Ensure the test file exists
+      file:
+        path: /tmp/test_file.txt
+        state: touch
+
+    - name: Create a directory
+      file:
+        path: /tmp/test_directory
+        state: directory
+
+    - name: Write a message to a file
+      copy:
+        content: "This is a test file created by Ansible."
+        dest: /tmp/test_file.txt
+        owner: root
+        group: root
+        mode: '0644'
