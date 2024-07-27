@@ -150,7 +150,7 @@ Run the playbook using the following command:
 ansible-playbook -i inventory.txt install_nginx.yml
 
 ```
-### Verifying the Playbook Execution
+# Verifying the Playbook Execution
 To ensure that the tasks in the playbook were executed successfully on the target machines, you can verify the following:
 
 1. Check nginx Installation
@@ -165,8 +165,8 @@ Expected Output:
 ```bash
 ii  nginx                             1.18.0-0ubuntu1                              amd64        small, powerful, scalable web/proxy server
 ```
-# This confirms that the nginx package is installed.
-### OR
+## This confirms that the nginx package is installed.
+
 2. Check nginx Service Status
 On the Target Machine:
 ```bash
