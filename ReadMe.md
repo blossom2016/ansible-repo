@@ -12,6 +12,22 @@ Edit the `/etc/hosts` file:
 sudo vi /etc/hosts
 ```
 
+Add these lines:
+```bash
+127.0.1.1 primary
+127.0.0.1 localhost
+```
+
+Edit the /etc/hostname file:
+```bash
+sudo vi /etc/hostname
+```
+
+Set the hostname:
+```bash
+primary
+```
+
 # Ansible-Repo 
 This an ansible Repo for my personal use. I used multiple vm's for my testing.
 I created an inventory.txt file to store my hostnames.
