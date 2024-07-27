@@ -152,8 +152,27 @@ ansible-playbook -i inventory.txt install_nginx.yml
 ```
 # Verifying the Playbook Execution
 To ensure that the tasks in the playbook were executed successfully on the target machines, you can verify the following:
+1. Check Ansible Output
+When you run the ansible-playbook command, Ansible provides output indicating which tasks were successful, which failed, and which were skipped. Here’s how you can interpret this output:
 
-1. Check nginx Installation
+Successful Tasks: The output will show ok for tasks that were executed successfully.
+Changed Tasks: The output will show changed if a task made modifications on the target machine.
+Failed Tasks: The output will show failed if there was an error executing a task.
+Example Output:
+
+```bash
+PLAY [Manage Ubuntu Hosts] ***
+TASK [Update all packages to the latest version] ***
+ok: [192.168.1.10]
+changed: [192.168.1.11]
+
+TASK [Install the curl package] ***
+ok: [192.168.1.10]
+changed: [192.168.1.11]
+
+...
+```
+2. Check nginx Installation
 On the Target Machine:
 
 Run:
@@ -167,7 +186,7 @@ ii  nginx                             1.18.0-0ubuntu1                           
 ```
 ## This confirms that the nginx package is installed.
 
-2. Check nginx Service Status
+3. Check nginx Service Status
 On the Target Machine:
 ```bash
 sudo systemctl status nginx
