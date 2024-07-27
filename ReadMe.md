@@ -85,4 +85,7 @@ Before running Ansible, test SSH connectivity to ensure everything is set up cor
 ssh ubuntu@<vm1_ip>
 You should be able to connect without entering the passphrase, as the SSH agent handles it.
 
-# ansible-repo
+Step 12: Install Ansible on Control Machine
+Install Ansible on the control machine using the following command:
+sudo apt install ansible
+
