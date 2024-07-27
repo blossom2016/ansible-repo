@@ -175,7 +175,6 @@ sudo systemctl status nginx
 # Expected Output:
 
 ```bash
-Copy code
 ● nginx.service - A high-performance web server and a reverse proxy server
    Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
    Active: active (running) since Sat 2024-07-27 12:00:00 UTC; 1min 30s ago
