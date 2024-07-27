@@ -10,7 +10,7 @@ Edit the `/etc/hosts` file:
 
 ```bash
 sudo vi /etc/hosts
-
+```
 
 # Ansible-Repo 
 This an ansible Repo for my personal use. I used multiple vm's for my testing.
